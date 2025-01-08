@@ -1,34 +1,25 @@
 import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import 'leaflet/dist/leaflet.css';
+import Map from './Map.jsx';
+import githubLogo from './assets/github-dark.svg'
+import pbwLogo from './assets/project-blue-waters.png'
+import './stylesheet.css'
 
 function App() {
-  const [count, setCount] = useState(0)
-
   return (
-    <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
+    <div className="relative">
+      <div className="w-50 h-[2vh] bg-[#15b7f2] text-white font-bold flex items-center justify-center pointer-events-auto">
+        Endangered Species Map
       </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
+      <Map />
+      <div className='h-[8vh] w-full bg-[#15b7f2] text-white flex items-center justify-center px-2'>
+        <div className='flex justify-center'>
+          Created with ❤️ by <a href='https://github.com/c0dev1king' className='ml-1 hover:text-orange-500'>c0dev1king</a>
+          <img src={githubLogo} className='w-6 h-6 ml-2' />
+        </div>
       </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
+      <img src={pbwLogo} className='h-[7vh] absolute bottom-1 right-1' />
+    </div>
   )
 }
 
